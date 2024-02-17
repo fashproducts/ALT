@@ -44,6 +44,12 @@ const ResultCard = ({ eventData }) => {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-10">
         {filteredEvents.map((event, index) => {
           const eventName = event[1];
+
+          const isTeamEvent =
+            event[2] === "----------------" &&
+            event[6] === "----------------" &&
+            event[10] === "----------------";
+
           const first = {
             name: event[2],
             dept: event[4],
@@ -63,51 +69,97 @@ const ResultCard = ({ eventData }) => {
           return (
             <div
               key={index}
-              className="max-w-md mx-auto bg-contain w-[350px] md:w-[400px] bg-[url(./card.png)]  rounded-md overflow-hidden shadow-2xl flex flex-col"
+              className="max-w-md mx-auto w-[350px] md:w-[400px] rounded-md overflow-hidden shadow-2xl flex flex-col relative"
             >
-              <div className="text-center h-28 mt-6 px-1 flex justify-center items-center">
-                <h2 className="text-3xl font-semibold text-white relative z-10 h-10 ">
+              <img
+                src="./card.png"
+                alt="Event Card"
+                className="absolute inset-0 w-full h-full object-cover object-center"
+              />
+              <div className="text-center h-28 mt-6 px-1 flex justify-center items-center relative z-10">
+                <h2 className="text-3xl font-semibold text-white h-10">
                   {eventName}
                 </h2>
               </div>
-              <div className="p-4 py-8 md:py-10 flex-grow">
-                <div className="mb-4">
-                  <div className="flex items-center justify-between bg-[#333333] text-white p-2 rounded-md">
-                    <div className="flex-grow">
-                      <p className="text-base font-bold">{first.name}</p>
-                      <p className="text-base">{first.dept}</p>
-                      <p className="text-base">{first.team}</p>
+              {isTeamEvent ? (
+                <div className="p-4 py-8 md:py-10 flex-grow relative z-10">
+                  <div className="mb-4">
+                    <div className=" flex items-center justify-between bg-[#333333] text-white p-2 py-6 rounded-md">
+                      <div className="flex-grow">
+                        {/* <p className="text-base font-bold">{first.name}</p>
+                      <p className="text-base">{first.dept}</p> */}
+                        <p className="text-base font-bold">{first.team}</p>
+                      </div>
+                      <div className="flex items-center">
+                        <span className="text-4xl mr-2">🥇</span>
+                      </div>
                     </div>
-                    <div className="flex items-center">
-                      <span className="text-4xl mr-2">🥇</span>
+                  </div>
+                  <div className="mb-4">
+                    <div className="flex items-center justify-between bg-[#FFD700] p-2 py-6 rounded-md">
+                      <div className="flex-grow">
+                        {/* <p className="text-base font-bold">{second.name}</p>
+                      <p className="text-base">{second.dept}</p> */}
+                        <p className="text-base font-bold">{second.team}</p>
+                      </div>
+                      <div className="flex items-center">
+                        <span className="text-3xl mr-2">🥈</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="flex items-center justify-between bg-white p-2 py-6 rounded-md">
+                      <div className="flex-grow">
+                        {/* <p className="text-base font-bold">{third.name}</p>
+                      <p className="text-base">{third.dept}</p> */}
+                        <p className="text-base font-bold">{third.team}</p>
+                      </div>
+                      <div className="flex items-center">
+                        <span className="text-3xl mr-2">🥉</span>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div className="mb-4">
-                  <div className="flex items-center justify-between bg-[#FFD700] p-2 rounded-md">
-                    <div className="flex-grow">
-                      <p className="text-base font-bold">{second.name}</p>
-                      <p className="text-base">{second.dept}</p>
-                      <p className="text-base">{second.team}</p>
+              ) : (
+                <div className="p-4 py-8 md:py-10 flex-grow relative z-10">
+                  <div className="mb-4">
+                    <div className="flex items-center justify-between bg-[#333333] text-white p-2 rounded-md">
+                      <div className="flex-grow">
+                        <p className="text-base font-bold">{first.name}</p>
+                        <p className="text-base">{first.dept}</p>
+                        <p className="text-base">{first.team}</p>
+                      </div>
+                      <div className="flex items-center">
+                        <span className="text-4xl mr-2">🥇</span>
+                      </div>
                     </div>
-                    <div className="flex items-center">
-                      <span className="text-3xl mr-2">🥈</span>
+                  </div>
+                  <div className="mb-4">
+                    <div className="flex items-center justify-between bg-[#FFD700] p-2 rounded-md">
+                      <div className="flex-grow">
+                        <p className="text-base font-bold">{second.name}</p>
+                        <p className="text-base">{second.dept}</p>
+                        <p className="text-base">{second.team}</p>
+                      </div>
+                      <div className="flex items-center">
+                        <span className="text-3xl mr-2">🥈</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="flex items-center justify-between bg-white text- p-2 rounded-md">
+                      <div className="flex-grow">
+                        <p className="text-base font-bold">{third.name}</p>
+                        <p className="text-base">{third.dept}</p>
+                        <p className="text-base">{third.team}</p>
+                      </div>
+                      <div className="flex items-center">
+                        <span className="text-3xl mr-2">🥉</span>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div>
-                  <div className="flex items-center justify-between bg-white text- p-2 rounded-md">
-                    <div className="flex-grow">
-                      <p className="text-base font-bold">{third.name}</p>
-                      <p className="text-base">{third.dept}</p>
-                      <p className="text-base">{third.team}</p>
-                    </div>
-                    <div className="flex items-center">
-                      <span className="text-3xl mr-2">🥉</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              )}
             </div>
           );
         })}

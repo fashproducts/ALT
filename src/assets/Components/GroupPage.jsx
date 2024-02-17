@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import LazyLoad from "react-lazy-load";
-import ResultCard from "./Components/ResultCard";
+import GroupResultCard from "./GroupResultCard";
 
-const IndividualPage = () => {
+const GroupPage = () => {
   const [data, setData] = useState(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 767);
 
@@ -19,7 +19,7 @@ const IndividualPage = () => {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        "https://sheets.googleapis.com/v4/spreadsheets/1QaNDW7ZJq3sv9Bs5Z3pu4NVcKO6jJzNivw45mu8O16Q/values/Cards-Individual?alt=json&key=AIzaSyAWVk354HGXO8Dq5jIsr1G5ZGHaPhUBqxA"
+        "https://sheets.googleapis.com/v4/spreadsheets/1QaNDW7ZJq3sv9Bs5Z3pu4NVcKO6jJzNivw45mu8O16Q/values/Group?alt=json&key=AIzaSyAWVk354HGXO8Dq5jIsr1G5ZGHaPhUBqxA"
       );
 
       if (!response.ok) {
@@ -36,6 +36,7 @@ const IndividualPage = () => {
   useEffect(() => {
     fetchData();
   }, []);
+  console.log(data);
 
   return (
     <div className="bg-amber-50 flex flex-col">
@@ -52,7 +53,7 @@ const IndividualPage = () => {
           {data ? (
             <div className="p-5 md:px-20 min-h-screen">
               <div className=" mt-10">
-                <ResultCard eventData={data.values} />
+                <GroupResultCard eventData={data.values} />
               </div>
             </div>
           ) : (
@@ -81,17 +82,17 @@ const IndividualPage = () => {
         </div>
 
         <a href="https://framesify.com/">
-          <p className="mt-24 sm:mt-14 mx-auto mb-5 sm:mb-5 text-xs">
+          <p className="mt-24 sm:mt-14 mx-auto sm:mb-5 text-xs">
             Made with ❤️ by team behind framesify.com
           </p>
         </a>
       </div>
       {/* <img
-        src={isMobile ? "./Footer2.png" : "./Footer_Desk.png"}
-        className=" w-full"
-      /> */}
+          src={isMobile ? "./Footer2.png" : "./Footer_Desk.png"}
+          className=" w-full"
+        /> */}
     </div>
   );
 };
 
-export default IndividualPage;
+export default GroupPage;
