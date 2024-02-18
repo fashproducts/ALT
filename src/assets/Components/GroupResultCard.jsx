@@ -46,7 +46,7 @@ const GroupResultCard = ({ eventData }) => {
             return (
               <div
                 key={index}
-                className="max-w-md mx-auto w-[350px] md:w-[400px] rounded-md overflow-hidden shadow-2xl flex flex-col relative"
+                className="max-w-md mx-auto w-[350px] md:w-[350px] rounded-md overflow-hidden shadow-2xl flex flex-col relative"
               >
                 <img
                   src="./card.png"
