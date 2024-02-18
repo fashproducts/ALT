@@ -41,7 +41,7 @@ const ResultCard = ({ eventData }) => {
           className="py-2 px-10 border border-gray-300 rounded-md"
         />
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-10">
         {filteredEvents.map((event, index) => {
           const eventName = event[1];
 
