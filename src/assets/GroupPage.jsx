@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import LazyLoad from "react-lazy-load";
-import GroupResultCard from "./GroupResultCard";
+import GroupResultCard from "./Components/GroupResultCard";
 
 const GroupPage = () => {
   const [data, setData] = useState(null);

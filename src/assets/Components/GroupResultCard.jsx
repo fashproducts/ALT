@@ -20,7 +20,7 @@ const GroupResultCard = ({ eventData }) => {
       <div className="space-y-7 ">
         <div className="mb-4 flex flex-col md:flex-row md:justify-between w-9/12 md:w-full space-y-3">
           <h1 className="text-2xl border-b-2 border-b-gray-600 pt-sans w-fit">
-            Individual Results
+            Group Results
           </h1>
           <input
             type="text"

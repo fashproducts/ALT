@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LandingPage from "./assets/LandingPage";
 import IndividualPage from "./assets/IndividualPage";
-import GroupPage from "./assets/Components/GroupPage";
+import GroupPage from "./assets/GroupPage";
 import ErrorPage from "./assets/ErrorPage";
 
 const App = () => {

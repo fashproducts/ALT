@@ -19,7 +19,7 @@ const IndividualPage = () => {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        "https://sheets.googleapis.com/v4/spreadsheets/1QaNDW7ZJq3sv9Bs5Z3pu4NVcKO6jJzNivw45mu8O16Q/values/Cards-Individual?alt=json&key=AIzaSyAWVk354HGXO8Dq5jIsr1G5ZGHaPhUBqxA"
+        "https://sheets.googleapis.com/v4/spreadsheets/1QaNDW7ZJq3sv9Bs5Z3pu4NVcKO6jJzNivw45mu8O16Q/values/Individual?alt=json&key=AIzaSyAWVk354HGXO8Dq5jIsr1G5ZGHaPhUBqxA"
       );
 
       if (!response.ok) {

@@ -19,7 +19,19 @@ const Hero = ({ isMobile }) => {
       </LazyLoad>
       <div className="w-full flex flex-col items-center justify-center p-10 space-y-10">
         <img src="./Logo.png" alt="" className="md:h-[450px] " />
-        <div className="w-full flex flex-col md:flex-row justify-center pl-10 space-x-5 space-y-3">
+        <div className="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+          <Link to="/Individual">
+            <button className="inline-flex justify-center items-center py-2 px-5 text-base font-medium text-center rounded-lg bg-red-800/90 text-white border-white-500 ">
+              Individual Results
+            </button>
+          </Link>
+          <Link to="/group">
+            <button className="inline-flex justify-center items-center py-2 px-5 text-base font-medium text-center rounded-lg  text-white bg-red-800/90 border-white-500">
+              Group Results
+            </button>
+          </Link>
+        </div>
+        {/* <div className="w-full flex flex-col md:flex-row justify-center pl-10 space-x-5 space-y-3">
           <Link to="/individual">
             <button
               type="button"
@@ -36,7 +48,7 @@ const Hero = ({ isMobile }) => {
               Group Events
             </button>
           </Link>
-        </div>
+        </div> */}
       </div>
     </div>
   );
