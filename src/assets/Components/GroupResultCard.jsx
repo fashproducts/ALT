@@ -49,7 +49,7 @@ const GroupResultCard = ({ eventData }) => {
                 className="max-w-md mx-auto w-[350px] md:w-[350px] rounded-md overflow-hidden shadow-2xl flex flex-col relative"
               >
                 <img
-                  src="./card.png"
+                  src="./card.jpg"
                   alt="Event Card"
                   className="absolute inset-0 w-full h-full object-cover object-center"
                 />
