@@ -9,7 +9,15 @@ const GroupResultCard = ({ eventData }) => {
   }
 
   const validEvents = eventData.slice(1).filter((event) => {
-    return event.length === 5 && event[2] && event[3] && event[4];
+    return (
+      event.length === 8 &&
+      event[2] &&
+      event[3] &&
+      event[4] &&
+      event[5] &&
+      event[6] &&
+      event[7]
+    );
   });
 
   const filteredEvents = validEvents.filter((event) =>
@@ -35,12 +43,15 @@ const GroupResultCard = ({ eventData }) => {
             const eventName = event[1];
             const first = {
               name: event[2],
+              lead: event[3],
             };
             const second = {
-              name: event[3],
+              name: event[4],
+              lead: event[5],
             };
             const third = {
-              name: event[4],
+              name: event[6],
+              lead: event[7],
             };
 
             return (
@@ -63,6 +74,7 @@ const GroupResultCard = ({ eventData }) => {
                     <div className="flex items-center justify-between bg-[#333333] text-white p-2 py-6 rounded-md">
                       <div className="flex-grow">
                         <p className="text-base font-bold">{first.name}</p>
+                        <p className="text-sm">{first.lead}</p>
                       </div>
                       <div className="flex items-center">
                         <span className="text-4xl mr-2">🥇</span>
@@ -73,6 +85,7 @@ const GroupResultCard = ({ eventData }) => {
                     <div className="flex items-center justify-between bg-[#FFD700] p-2 py-6 rounded-md">
                       <div className="flex-grow">
                         <p className="text-base font-bold">{second.name}</p>
+                        <p className="text-sm">{second.lead}</p>
                       </div>
                       <div className="flex items-center">
                         <span className="text-3xl mr-2">🥈</span>
@@ -83,6 +96,7 @@ const GroupResultCard = ({ eventData }) => {
                     <div className="flex items-center justify-between bg-white text- p-2 py-6 rounded-md">
                       <div className="flex-grow">
                         <p className="text-base font-bold">{third.name}</p>
+                        <p className="text-sm">{third.lead}</p>
                       </div>
                       <div className="flex items-center">
                         <span className="text-3xl mr-2">🥉</span>
